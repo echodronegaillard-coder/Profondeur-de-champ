@@ -1,4 +1,4 @@
-const focales = [24, 35, 50, 85, 105, 135, 200];
+const focales = [24, 35, 50, 85, 105, 135, 200, 300, 400, 600, 800];
 const ouvertures = ["f/1.4", "f/2", "f/2.8", "f/4", "f/5.6", "f/8", "f/11", "f/16", "f/22"];
 const ouverturesNum = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
 const distances = [0.5, 1, 2, 3, 5, 10, 20, 50, 100];
@@ -6,6 +6,7 @@ const distances = [0.5, 1, 2, 3, 5, 10, 20, 50, 100];
 let focaleIndex = 2; // 50mm
 let ouvertureIndex = 2; // f/2.8
 let distanceIndex = 2; // 2m
+
 
 function changerValeur(param, direction) {
   switch(param) {
@@ -94,4 +95,5 @@ function toggleTheme() {
 window.addEventListener('DOMContentLoaded', () => {
   calculer();
   window.addEventListener('resize', calculer);
+
 });
