@@ -67,10 +67,20 @@
         <circle id="sujet" cy="30" r="8" fill="#FF9800"/>
       </svg>
     </div>
-    <p style="font-size:0.95em;color:#666;">Focales disponibles : 24, 35, 50, 85, 105, 135, 150, 200, 300, 400, 500 600, 800 mm</p>
+    <!-- Liste dynamique des focales -->
+    <p id="listeFocales" style="font-size:0.95em;color:#666;"></p>
     <p style="font-size:0.9em;color:#888;">La valeur est donnée à titre indicatif.</p>
   </main>
   <script src="script.js"></script>
+  <script>
+    // Affichage dynamique de la liste des focales
+    // (Ce code suppose que la variable "focales" est déjà déclarée dans script.js)
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof focales !== "undefined") {
+        document.getElementById('listeFocales').textContent =
+          'Focales disponibles : ' + focales.join(', ') + ' mm';
+      }
+    });
+  </script>
 </body>
 </html>
-
