@@ -3,51 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <title>Calculateur de Profondeur de Champ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main>
     <h1 class="titre">Calculateur de Profondeur de Champ</h1>
-    <p class="sous-titre">La valeur est donnée à titre indicatif.</p>
-    <button onclick="toggleTheme()" class="theme-btn">🌙 Mode sombre</button>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Mode sombre</button>
     <div class="container">
       <!-- Focale -->
       <div class="parametre">
-        <label>Focale (mm)</label>
+        <label for="focaleValeur">Focale (mm)</label>
         <div class="controle">
-          <button onclick="changerValeur('focale', -1)">–</button>
+          <button type="button" onclick="changerValeur('focale', -1)">–</button>
           <span id="focaleValeur">50</span>
-          <button onclick="changerValeur('focale', 1)">+</button>
+          <button type="button" onclick="changerValeur('focale', 1)">+</button>
         </div>
       </div>
       <!-- Ouverture -->
       <div class="parametre">
-        <label>Ouverture (f/)</label>
+        <label for="ouvertureValeur">Ouverture (f/)</label>
         <div class="controle">
-          <button onclick="changerValeur('ouverture', -1)">–</button>
+          <button type="button" onclick="changerValeur('ouverture', -1)">–</button>
           <span id="ouvertureValeur">f/2.8</span>
-          <button onclick="changerValeur('ouverture', 1)">+</button>
+          <button type="button" onclick="changerValeur('ouverture', 1)">+</button>
         </div>
       </div>
-      <!-- Distance -->
+      <!-- Distance sujet -->
       <div class="parametre">
-        <label>Distance sujet (m)</label>
+        <label for="distanceValeur">Distance sujet (m)</label>
         <div class="controle">
-          <button onclick="changerValeur('distance', -1)">–</button>
+          <button type="button" onclick="changerValeur('distance', -1)">–</button>
           <span id="distanceValeur">2</span>
-          <button onclick="changerValeur('distance', 1)">+</button>
+          <button type="button" onclick="changerValeur('distance', 1)">+</button>
         </div>
       </div>
       <!-- Capteur -->
       <div class="parametre">
-        <label>Capteur</label>
+        <label for="capteur">Capteur</label>
         <select id="capteur" onchange="calculer()">
           <option value="0.03">Plein format</option>
-          <option value="0.02">APS-C</option>
+          <option value="0.019">APS-C</option>
           <option value="0.015">Micro 4/3</option>
         </select>
       </div>
-      <!-- Unité -->
+      <!-- Unité profondeur de champ -->
       <div class="parametre">
         <label for="uniteChamp">Unité pour la profondeur de champ :</label>
         <select id="uniteChamp" onchange="calculer()">
@@ -56,19 +56,19 @@
           <option value="m">Mètres (m)</option>
         </select>
       </div>
-      <button onclick="calculer()">Calculer</button>
     </div>
-    <div class="resultat" id="resultat"></div>
+    <div class="resultat" id="resultat">
+      <!-- Résultat affiché ici -->
+    </div>
     <div class="schema">
-      <svg id="schemaSVG" width="100%" height="60">
-        <!-- Zone nette -->
-        <rect id="zoneNette" y="20" height="20" fill="#28a745" opacity="0.3" rx="8"/>
-        <!-- Hyperfocale -->
-        <line id="hyperfocale" y1="10" y2="50" stroke="#007BFF" stroke-width="3" stroke-dasharray="6,4"/>
-        <!-- Sujet -->
-        <circle id="sujet" cy="30" r="10" fill="#FF9800" stroke="#333" stroke-width="2"/>
+      <svg id="schemaSVG" width="500" height="60">
+        <rect id="zoneNette" y="20" height="20" fill="#28a745" opacity="0.3"/>
+        <line id="hyperfocale" y1="10" y2="50" stroke="#007BFF" stroke-width="3"/>
+        <circle id="sujet" cy="30" r="8" fill="#FF9800"/>
       </svg>
     </div>
+    <p style="font-size:0.95em;color:#666;">Focales disponibles : 24, 35, 50, 85, 105, 135, 200, 300, 400, 600, 800 mm</p>
+    <p style="font-size:0.9em;color:#888;">La valeur est donnée à titre indicatif.</p>
   </main>
   <script src="script.js"></script>
 </body>
