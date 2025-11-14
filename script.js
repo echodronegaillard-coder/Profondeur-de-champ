@@ -93,10 +93,11 @@ function toggleTheme() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('focaleValeur').textContent = focales[focaleIndex];
   calculer();
   window.addEventListener('resize', calculer);
-
 });
+
 
 
 
