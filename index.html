@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculateur de Profondeur de Champ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1 class="titre">Calculateur de Profondeur de Champ</h1>
+    <p class="sous-titre">La valeur est donnée à titre indicatif.</p>
+    <button onclick="toggleTheme()" class="theme-btn">🌙 Mode sombre</button>
+    <div class="container">
+      <!-- Focale -->
+      <div class="parametre">
+        <label>Focale (mm)</label>
+        <div class="controle">
+          <button onclick="changerValeur('focale', -1)">–</button>
+          <span id="focaleValeur">50</span>
+          <button onclick="changerValeur('focale', 1)">+</button>
+        </div>
+      </div>
+      <!-- Ouverture -->
+      <div class="parametre">
+        <label>Ouverture (f/)</label>
+        <div class="controle">
+          <button onclick="changerValeur('ouverture', -1)">–</button>
+          <span id="ouvertureValeur">f/2.8</span>
+          <button onclick="changerValeur('ouverture', 1)">+</button>
+        </div>
+      </div>
+      <!-- Distance -->
+      <div class="parametre">
+        <label>Distance sujet (m)</label>
+        <div class="controle">
+          <button onclick="changerValeur('distance', -1)">–</button>
+          <span id="distanceValeur">2</span>
+          <button onclick="changerValeur('distance', 1)">+</button>
+        </div>
+      </div>
+      <!-- Capteur -->
+      <div class="parametre">
+        <label>Capteur</label>
+        <select id="capteur" onchange="calculer()">
+          <option value="0.03">Plein format</option>
+          <option value="0.02">APS-C</option>
+          <option value="0.015">Micro 4/3</option>
+        </select>
+      </div>
+      <!-- Unité -->
+      <div class="parametre">
+        <label for="uniteChamp">Unité pour la profondeur de champ :</label>
+        <select id="uniteChamp" onchange="calculer()">
+          <option value="mm">Millimètres (mm)</option>
+          <option value="cm">Centimètres (cm)</option>
+          <option value="m">Mètres (m)</option>
+        </select>
+      </div>
+      <button onclick="calculer()">Calculer</button>
+    </div>
+    <div class="resultat" id="resultat"></div>
+    <div class="schema">
+      <svg id="schemaSVG" width="100%" height="60">
+        <!-- Zone nette -->
+        <rect id="zoneNette" y="20" height="20" fill="#28a745" opacity="0.3" rx="8"/>
+        <!-- Hyperfocale -->
+        <line id="hyperfocale" y1="10" y2="50" stroke="#007BFF" stroke-width="3" stroke-dasharray="6,4"/>
+        <!-- Sujet -->
+        <circle id="sujet" cy="30" r="10" fill="#FF9800" stroke="#333" stroke-width="2"/>
+      </svg>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
