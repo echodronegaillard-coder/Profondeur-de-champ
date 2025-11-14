@@ -1,4 +1,4 @@
-const focales = [24, 35, 50, 85, 105, 135, 200, 300, 400, 600, 800];
+const focales = [24, 35, 50, 85, 105, 135, 150, 200, 300, 400, 500 600, 800];
 const ouvertures = ["f/1.4", "f/2", "f/2.8", "f/4", "f/5.6", "f/8", "f/11", "f/16", "f/22"];
 const ouverturesNum = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
 const distances = [0.5, 1, 2, 3, 5, 10, 20, 50, 100];
@@ -97,3 +97,4 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', calculer);
 
 });
+
