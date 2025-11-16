@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Calculateur de Profondeur de Champ</title>
+  <title>Profondeur de Champ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main>
-    <h1 class="titre">Calculateur de Profondeur de Champ</h1>
+    <h1 class="titre">Profondeur de Champ</h1>
     <button class="theme-btn" onclick="toggleTheme()">🌙 Mode sombre</button>
     <div class="container">
       <!-- Focale -->
@@ -67,24 +67,11 @@
         <circle id="sujet" cy="30" r="8" fill="#FF9800"/>
       </svg>
     </div>
-    <!-- Liste dynamique des focales -->
-    <p id="listeFocales" style="font-size:0.95em;color:#666;"></p>
-    <p style="font-size:0.9em;color:#888;">La valeur est donnée à titre indicatif.</p>
+        <p style="font-size:0.8em;color:#888;">La valeur est donnée à titre indicatif.</p>
   </main>
-  <script src="script.js?v=4"></script>
-  <script>
-    // Affichage dynamique de la liste des focales
-    // (Ce code suppose que la variable "focales" est déjà déclarée dans script.js)
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof focales !== "undefined") {
-        document.getElementById('listeFocales').textContent =
-          'Focales disponibles : ' + focales.join(', ') + ' mm';
-      }
-    });
-  </script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
-
 
 
 
