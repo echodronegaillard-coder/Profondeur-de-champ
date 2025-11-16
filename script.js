@@ -1,7 +1,7 @@
 const focales = [14, 24, 35, 50, 85, 105, 135, 150, 200, 250, 300, 400, 500, 600, 800, 1200];
 const ouvertures = ["f/1.4", "f/2", "f/2.8", "f/4", "f/5.6", "f/8", "f/11", "f/16", "f/22"];
 const ouverturesNum = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
-const distances = [0.5, 1, 2, 3, 5, 10, 20, 50, 100];
+const distances = [0.5, 1, 2, 3, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80];
 
 let focaleIndex = 2; // 50mm
 let ouvertureIndex = 2; // f/2.8
@@ -59,9 +59,7 @@ function calculer() {
   }
 
   document.getElementById('resultat').innerHTML =
-    `Focale : ${f} mm<br>
-    Ouverture : ${ouvertures[ouvertureIndex]}<br>
-    Distance sujet : ${distances[distanceIndex]} m<br>
+    `
     Zone nette : de ${nearM.toFixed(2)} m à ${farM === Infinity ? "∞" : farM.toFixed(2) + " m"}<br>
     Hyperfocale : ${(H / 1000).toFixed(2)} m<br>
     Profondeur de champ : ${profondeurChamp}`;
@@ -97,7 +95,6 @@ window.addEventListener('DOMContentLoaded', () => {
   calculer();
   window.addEventListener('resize', calculer);
 });
-
 
 
 
