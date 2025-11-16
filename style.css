@@ -16,7 +16,7 @@ body {
 
 main {
   width: 100%;
-  max-width: 520px;
+  max-width: 400px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ main {
 
 .titre, .sous-titre, .theme-btn, .container, .resultat, .schema {
   text-align: center;
-  width: 100%;
+  width: 85%;
 }
 
 .theme-btn {
@@ -41,7 +41,7 @@ main {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 300px;
   padding: 20px;
   background: #fff;
   border-radius: 10px;
@@ -79,7 +79,7 @@ main {
   border-radius: 5px;
   border: none;
   background: #007BFF;
-  color: white;
+  color: rgba(255, 255, 255, 0.884);
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -96,7 +96,7 @@ main {
 }
 
 .resultat {
-  max-width: 400px;
+  max-width: 300px;
   margin: 0 auto 20px auto;
   padding: 15px;
   background: #e9f7ef;
@@ -114,7 +114,7 @@ main {
 
 svg {
   width: 100%;
-  height: 60px;
+  height: 50px;
   display: block;
   margin: 0 auto;
 }
